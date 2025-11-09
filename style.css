@@ -6,14 +6,6 @@
     width: 100%;
     height: 100%;
     z-index: 999;
-}
-.loader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
@@ -22,6 +14,7 @@
 
 .loader-content {
     text-align: center;
+    padding: 0 20px;
 }
 
 .email-icon {
@@ -45,8 +38,8 @@
     height: 60px;
     font-size: 22px;
     color: whitesmoke;
-    background-color: rgba(255, 135, 253, 0.1);
-    border: solid 4px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 135, 253, 80%);
+    border: solid 4px rgba(255, 255, 255, 80%);
     border-radius: 16px;
     backdrop-filter: blur(24px);
     position: static; 
@@ -55,6 +48,7 @@
     align-items: center;
     justify-content: center;
     gap: 0;
+    cursor: pointer;
 }
 
 .song {
@@ -62,12 +56,11 @@
 }
 
 body {
-    margin: 0; /* hapus margin default */
-    background-image: url(/img/bg.jpg);
-    background-size: cover;     /* menutupi seluruh area */
-    background-position: center; /* rata tengah */
-    background-repeat: no-repeat; /* jangan ulang */
-    min-height: 100vh;         /* tinggi minimal 1 viewport */
+    margin: 0;
+    background-size: cover;     
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;        
 }
 
 img {
@@ -76,7 +69,8 @@ img {
 
 .balloon-border {
     position: fixed;
-    top: 100%;
+    bottom: 0;
+    left: 0;
     opacity: 0.5;
     z-index: 99999999;
 }
@@ -90,6 +84,7 @@ img {
     text-transform: uppercase;
     animation: spin 3s ease-out infinite;
     text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+    margin: 20px 0;
 }
 
 #nae {
@@ -125,13 +120,107 @@ img {
 .type-wrap {
     font-size: 25px;
     color: #C4515C;
-
+    padding: 0 15px;
 }
 
 .cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    padding-top: 250px;
+    position: relative;
+    padding-top: 50px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Media Queries untuk Mobile */
+@media (max-width: 768px) {
+    .email-icon {
+        width: 40px;
+    }
+    
+    .loader-message {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .loader button {
+        width: 150px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .area {
+        font-size: 36px;
+        letter-spacing: -3px;
+        margin: 15px 0;
+    }
+    
+    .type-wrap {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .cake {
+        max-width: 256px;
+        padding-top: 16px;
+    }
+    
+    .main .container {
+        padding-top: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .email-icon {
+        width: 35px;
+    }
+    
+    .loader-message {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .loader button {
+        width: 130px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .area {
+        font-size: 28px;
+        letter-spacing: -2px;
+        margin: 10px 0;
+    }
+    
+    .type-wrap {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    .cake {
+        max-width: 256px;
+        padding-top: 16px;
+    }
+    
+    .main .container {
+        padding-top: 1.5rem !important;
+    }
+    
+    .balloon-border {
+        opacity: 0.3;
+    }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 360px) {
+    .area {
+        font-size: 24px;
+        letter-spacing: -1px;
+    }
+    
+    .type-wrap {
+        font-size: 12px;
+    }
+    
+    .cake {
+        max-width: 256px;
+    }
 }
